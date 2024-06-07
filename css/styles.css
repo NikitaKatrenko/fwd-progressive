@@ -1,0 +1,75 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.is-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.is-white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.button.is-black-white {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.button.is-black-white:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.button.is-white-black {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.button.is-white-black:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.add-post-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 2rem auto;
+}
+
+.add-post-button::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+}
+
+.modal-card input {
+    margin: 0 0 1rem 0;
+}
+
+.footer {
+    padding: 2rem 1.5rem 3rem;
+}

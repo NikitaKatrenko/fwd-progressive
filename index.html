@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff"/>
+    <title>My Travel Blog</title>
+    <!--add bulma css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+            <img class="mr-3" src="assets/logo.png" alt="My Travel Blog">
+            <strong>My Travel Blog</strong>
+        </a>
+
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="pages/about.html">About</a>
+            <a class="navbar-item" href="pages/contacts.html">Contacts</a>
+        </div>
+    </div>
+</nav>
+
+<div class="content-wrapper">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-three-quarters">
+                    <!--blog post container-->
+                    <div id="blogPostsContainer"></div>
+                    <button class="button is-white-black add-post-button s-modal-trigger js-modal-trigger"
+                            data-target="modal-js-example">
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <aside class="menu box is-white">
+                        <p class="menu-label">Categories</p>
+                        <ul class="menu-list">
+                            <li><a href="#">Beach</a></li>
+                            <li><a href="#">Hiking</a></li>
+                            <li><a href="#">City</a></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="footer is-black">
+    <div class="content has-text-centered">
+        <p>&copy; My Travel Blog</p>
+    </div>
+</footer>
+
+<!-- Add modal -->
+<div id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Create New Post</p>
+        </header>
+        <section class="modal-card-body">
+            <div id="notificationContainer"></div>
+            <input id="modal-post-name" class="input" type="text" placeholder="Few words about your latest trip"/>
+            <textarea
+                    id="modal-post-text"
+                    class="textarea"
+                    placeholder="Share every little detail now"
+                    rows="10"
+            ></textarea>
+        </section>
+        <footer class="modal-card-foot">
+            <div class="buttons">
+                <button class="button is-black-white is-small">Cancel</button>
+                <!-- add onclick event to the button-->
+                <button onclick="addPost()" class="button is-white-black is-small">Save changes</button>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="js/blog.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
