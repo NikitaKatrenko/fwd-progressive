@@ -13,6 +13,17 @@ const assets = [
     'https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css',
 ];
 
+//cache size limit
+const limitCacheSize = async (name, size) => {
+    const cache = await caches.open(name);
+    const keys = await cache.keys();
+
+    while (keys.length > size) {
+        const keyToRemove = keys.shift();
+        await cache.delete(keyToRemove);
+    }
+};
+
 //install service worker
 self.addEventListener('install', evt => {
     // console.log('service worker is installed', evt);
@@ -60,14 +71,3 @@ self.addEventListener('fetch', evt => {
         })
     );
 });
-
-//cache size limit
-const limitCacheSize = async (name, size) => {
-    const cache = await caches.open(name);
-    const keys = await cache.keys();
-
-    while (keys.length > size) {
-        const keyToRemove = keys.shift();
-        await cache.delete(keyToRemove);
-    }
-};
